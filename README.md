@@ -1,5 +1,9 @@
 # docker-cheky
 
+This a fork of skurtzemann/docker-cheky. It's just a more up to date version.
+
+Automated build using travis CI
+
 Dockerize version of **[Cheky](https://github.com/Blount/LBCAlerte)**.
 
 
@@ -11,7 +15,7 @@ Dockerize version of **[Cheky](https://github.com/Blount/LBCAlerte)**.
 Simply run the docker image and expose the port 80:
 
 ```
-$ docker run -d --name=cheky -p 80:80 skurtzemann/cheky:3.4-4
+$ docker run -d --name=cheky -p 80:80 menardorama/cheky:latest
 ```
 
 ### Persistent data
@@ -19,7 +23,7 @@ $ docker run -d --name=cheky -p 80:80 skurtzemann/cheky:3.4-4
 To persist **Cheky** configuration you can bind mount a docker volume to ``/var/www/html/var/``.
 
 ```
-$ docker run -d --name=cheky -p 80:80 -v <host_cheky_data_dir>:/var/www/html/var/  skurtzemann/cheky:3.4-4
+$ docker run -d --name=cheky -p 80:80 -v <host_cheky_data_dir>:/var/www/html/var/  menardorama/cheky:latestv
 ```
 
 

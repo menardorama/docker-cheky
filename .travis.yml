@@ -1,0 +1,14 @@
+sudo: true
+dist: trusty
+
+jobs:
+  include:
+    - stage: build docker image
+      script:
+      - echo $DOCKER_USERNAME
+      - docker login -u=$DOCKER_USERNAME -p=$DOCKER_PASSWORD
+      - docker build -t docker-checky .
+      - docker images
+      - docker tag docker-checky $DOCKER_USERNAME/docker-cheky:3.6
+      - docker tag docker-checky $DOCKER_USERNAME/docker-cheky:latest
+      - docker push $DOCKER_USERNAME/docker-checky
